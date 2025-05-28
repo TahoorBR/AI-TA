@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Load FileSaver.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+<div class="gf-container">
+    <div class="gf-form">
+        <h2>Grading & Feedback</h2>
+        <form id="gfForm" onsubmit="return false;">
+            <label>Subject:</label>
+            <input type="text" id="gf_subject" placeholder="e.g., Mathematics" required>
+
+            <label>Education Level:</label>
+            <select id="gf_education_level" required>
+                <option value="" disabled selected>Select Education Level</option>
+                <option value="primary">Primary</option>
+                <option value="middle">Middle</option>
+                <option value="high_school">High School</option>
+                <option value="undergraduate">Undergraduate</option>
+                <option value="postgraduate">Postgraduate</option>
+            </select>
+
+            <label>Mark Out Of:</label>
+            <input type="number" id="gf_mark_out_of" min="1" required>
+
+            <label>Upload Assignment/Quiz Document (optional):</label>
+            <input type="file" id="gf_file_upload" accept=".txt,.doc,.docx,.pdf">
+
+            <label>Or Paste Text Below:</label>
+            <textarea id="gf_pasted_text" rows="10" placeholder="Paste the student's submission here..."></textarea>
+
+            <button type="button" id="gf_generateButton" onclick="generateGradingFeedback()">Generate Grading & Feedback</button>
+
+            <div id="gf_loadingIndicator" style="display: none;">
+                <p>Grading and generating feedback, please wait...</p>
+                <div class="loading-bar"><div class="loading-fill"></div></div>
+            </div>
+        </form>
+    </div>
+
+    <div class="gf-output">
+        <h2>Grading & Feedback Result</h2>
+        <pre id="gfOutput"></pre>
+
+        <!-- Edit and Download buttons -->
+        <button id="gf_editButton" style="display: none;" onclick="enableEdit()">Edit</button>
+
+        <a id="gf_downloadLink" href="#" style="display: none;" download>
+            <button type="button" id="gf_downloadButton">Download Feedback (DOCX)</button>
+        </a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Load FileSaver.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+<div class="quiz-container">
+    <div class="quiz-form">
+        <h2>Quiz Generator</h2>
+        <form id="quizForm" onsubmit="return false;">
+            <label>Topic:</label>
+            <input type="text" id="topic" required>
+
+            <label>Quiz Type:</label>
+            <select id="quiz_type">
+                <option value="mcqs">MCQs</option>
+                <option value="true/false">True/False</option>
+                <option value="shortquestions">Short Questions</option>
+                <option value="longquestions">Long Questions</option>
+            </select>
+
+            <label>Number of Questions:</label>
+            <input type="number" id="num_questions" required>
+
+            <label>Education Level:</label>
+            <select id="education_level" required>
+                <option value="" disabled selected>Select Education Level</option>
+                <option value="primary">Primary</option>
+                <option value="middle">Middle</option>
+                <option value="high_school">High School</option>
+                <option value="undergraduate">Undergraduate</option>
+                <option value="postgraduate">Postgraduate</option>
+            </select>
+
+
+            <button type="button" id="generateButton" onclick="generateQuiz()">Generate Quiz</button>
+            <div id="loadingIndicator" style="display: none;">
+                <p>Generating quiz, please wait...</p>
+                <div class="loading-bar"><div class="loading-fill"></div></div>
+            </div>
+        </form>
+    </div>
+
+    <div class="quiz-output">
+        <h2>Generated Quiz Content</h2>
+        <pre id="quizOutput"></pre>
+
+        <!-- Buttons shown after quiz is generated -->
+        <button id="editButton" style="display: none;" onclick="enableEdit()">Edit</button>
+
+        <!-- Link for downloading the quiz DOCX -->
+        <a id="downloadLink" href="#" style="display: none;" download>
+            <button type="button" id="downloadButton">Download Quiz (DOCX)</button>
+        </a>
+    </div>
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,498 @@
+/* Import Comfortaa font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
+/* General Body Styling */
+body {
+    font-family: 'Comfortaa', cursive;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    position: relative;
+    z-index: 0;
+    color: #2C3E50;
+    overflow-x: hidden;
+}
+
+/* Blurred background image */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: url('images/bg.jpg') no-repeat center center / cover;
+    filter: blur(3px) brightness(0.9);
+    z-index: -2;
+}
+
+/* Header Styling */
+header {
+    background-color: #6767ad;
+    padding: 10px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 10px rgba(44, 62, 80, 0.15);
+    border-bottom: 1px solid #6767ad;
+}
+
+header h1 {
+    color: #FFF8E7;
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 1.2px;
+    font-family: 'Comfortaa', cursive;
+    text-transform: none;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.15);
+}
+
+/* Header Navigation */
+nav {
+    display: flex;
+    display: flex;
+    gap: 24px;
+    font-family: 'Comfortaa', cursive;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    color: #FFF8E7;
+}
+
+nav a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+    color: #FFF8E7;
+    font-weight: 600;
+    font-size: 1rem;
+    font-family: 'Comfortaa', cursive;
+}
+
+nav a:hover {
+    color: #6C5CE7;
+}
+
+nav a.disabled {
+    color: #A0A0A0;
+    cursor: not-allowed;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50px; /* Fixed width */
+    min-height: 80px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain; /* Makes sure the icon fits nicely without distortion */
+    margin-bottom: 6px;
+    filter: drop-shadow(0 0 1px rgba(0,0,0,0.2));
+    transition: transform 0.2s ease;
+}
+
+
+.nav-item:hover .nav-icon {
+    transform: scale(1.1);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.nav-item span {
+    font-size: 0.85rem;
+    font-weight: 500;
+    white-space: nowrap;        /* Prevents wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis;    /* Adds ... if text is too long */
+}
+
+
+/* Main container */
+.content-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 32px 40px;
+    background-color: #FFF8E7;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(44, 62, 80, 0.1);
+    color: #2C3E50;
+    font-family: 'Comfortaa', cursive;
+}
+
+.content-container h2 {
+    text-align: center;
+    margin-bottom: 24px;
+    color: #3F51B5;
+    font-weight: 600;
+    font-size: 1.75rem;
+}
+
+.content-container p {
+    color: #34495E;
+    font-size: 1.125rem;
+}
+
+/* Add this to your styles.css */
+
+textarea {
+    width: 100%;              /* Full width like inputs */
+    padding: 12px 14px;       /* Same padding */
+    margin-top: 6px;          /* Same margin as inputs */
+    border-radius: 8px;       /* Curved corners like inputs */
+    border: 1.5px solid #6C5CE7; /* Matching border color */
+    color: #2C3E50;           /* Text color */
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: 'Comfortaa', cursive;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+    resize: vertical;         /* Let user resize vertically only */
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #3F51B5;    /* Same focus border color as inputs */
+}
+
+/* Footer */
+footer {
+    background-color: #2C3E50;
+    color: #FFF8E7;
+    padding: 24px 0;
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    font-family: 'Comfortaa', cursive;
+}
+
+footer a {
+    color: #FFF8E7;
+    text-decoration: none;
+    margin: 0 14px;
+    transition: color 0.25s ease;
+    font-weight: 600;
+}
+
+footer a:hover {
+    color: #6C5CE7;
+}
+
+footer .footer-logo img {
+    width: 140px;
+    margin-top: 16px;
+    max-width: 90vw;
+    height: auto;
+}
+
+footer .footer-logo p {
+    font-size: 0.875rem;
+    color: #DCD6F7;
+    margin-top: 8px;
+}
+
+footer .social-icons {
+    margin-top: 20px;
+}
+
+footer .social-icons a {
+    color: #FFF8E7;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1.25rem;
+}
+
+footer .social-icons a:hover {
+    color: #6C5CE7;
+}
+
+/* Quiz and Generator page layout - shared styles */
+.quiz-container {
+    display: flex;
+    gap: 24px;
+    padding: 24px;
+    font-family: 'Comfortaa', cursive;
+}
+
+.quiz-form, .quiz-output {
+    background-color: #FFF8E7;
+    padding: 28px;
+    border-radius: 12px;
+    width: 50%;
+    color: #2C3E50;
+    box-shadow: 0 2px 12px rgba(44, 62, 80, 0.08);
+    font-family: 'Comfortaa', cursive;
+}
+
+/* Form styling */
+form label {
+    display: block;
+    margin-top: 16px;
+    font-weight: 600;
+    color: #3F51B5;
+    font-size: 1rem;
+    font-family: 'Comfortaa', cursive;
+}
+
+form input,
+form select,
+form button {
+    width: 100%;
+    padding: 12px 14px;
+    margin-top: 6px;
+    border-radius: 8px;
+    border: 1.5px solid #6C5CE7;
+    color: #2C3E50;
+    font-size: 1rem;
+    font-weight: 500;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+    font-family: 'Comfortaa', cursive;
+}
+
+form input:focus,
+form select:focus {
+    outline: none;
+    border-color: #3F51B5;
+}
+
+form button {
+    background-color: #6C5CE7;
+    color: #FFF8E7;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 22px;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+/* Edit and Download button styles */
+button {
+    background-color: #6C5CE7;
+    color: #FFF8E7;
+    padding: 14px 28px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+    font-family: 'Comfortaa', cursive;
+}
+
+button:hover,
+form button:hover {
+    background-color: #574BDC;
+}
+
+/* Output styling */
+#quizOutput,
+#assignmentOutput,
+#courseOutlineOutput,
+#gfOutput {
+    background-color: #FFF8E7;
+    color: #2C3E50;
+    padding: 18px 22px;
+    border-radius: 10px;
+    font-family: 'Courier New', monospace;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    border: 1px solid #DDD6F3;
+    height: 300px;
+    overflow-y: auto;
+    box-shadow: 0 0 12px rgba(108, 92, 231, 0.2);
+}
+
+
+/* Loading bar */
+.loading-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #DDD6F3;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 12px;
+}
+
+.loading-fill {
+    height: 100%;
+    width: 0;
+    background-color: #6C5CE7;
+    animation: loading 2.5s linear infinite;
+}
+
+@keyframes loading {
+    0%   { width: 0; }
+    50%  { width: 100%; }
+    100% { width: 0; }
+}
+
+.course-outline-container {
+    display: flex;
+    gap: 24px;
+    padding: 24px;
+    font-family: 'Comfortaa', cursive;
+}
+
+.course-outline-form, .course-outline-output {
+    background-color: #FFF8E7;
+    padding: 28px;
+    border-radius: 12px;
+    width: 50%;
+    font-family: 'Comfortaa', cursive;
+}
+
+.settings-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 12px 20px;
+        gap: 12px;
+        text-align: center;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+        font-family: 'Comfortaa', cursive;
+    }
+
+    nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        /* no wrap to keep all nav items in a row */
+        flex-wrap: nowrap;
+        overflow-x: auto;              /* allow horizontal scroll */
+        -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(1px);
+        border-top: 1px solid #ddd;
+        padding: px 0;
+        z-index: 999;
+        scrollbar-width: none;         /* Firefox: hide scrollbar */
+    }
+    /* Hide scrollbar for Webkit browsers */
+    nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav-item {
+        flex: 0 0 50px; /* fixed width, don’t grow or shrink */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #2C3E50;
+        text-decoration: none;
+        font-size: 0.75rem;
+        transition: color 0.2s;
+        min-height: 90px;
+    }
+
+    .nav-item:hover {
+        color: #007bff;
+    }
+
+    .nav-icon {
+        width: 22px;
+        height: 22px;
+        margin-bottom: 4px;
+        object-fit: contain;
+        filter: drop-shadow(0 1px 1px rgba(0,0,0,0.1));
+    }
+
+    .nav-item span {
+        font-weight: 500;
+        text-align: center;
+        font-size: 0.75rem;
+        line-height: 1;
+    }
+
+    .content-container {
+        margin: 20px 16px 110px; /* extra bottom space for scrollable nav */
+        padding: 24px 20px;
+    }
+
+    .quiz-container,
+    .course-outline-container {
+        flex-direction: column;
+        padding: 16px;
+    }
+
+    .quiz-form, .quiz-output,
+    .course-outline-form, .course-outline-output {
+        width: 100%;
+        padding: 20px;
+    }
+
+    button, form button {
+        width: 100%;
+    }
+
+    footer {
+        padding: 16px 12px;
+        font-size: 0.9rem;
+    }
+
+    footer .footer-logo img {
+        width: 100px;
+    }
+
+    footer .social-icons a {
+        margin: 0 8px;
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .nav-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .nav-item span {
+        font-size: 0.7rem;
+    }
+
+    .content-container h2 {
+        font-size: 1.4rem;
+    }
+
+    .content-container p {
+        font-size: 1rem;
+    }
+
+    .quiz-form, .quiz-output,
+    .course-outline-form, .course-outline-output {
+        padding: 16px;
+    }
+
+    button, form button {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+
+    footer {
+        font-size: 0.8rem;
+        padding: 12px 8px;
+    }
+}
+

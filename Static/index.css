@@ -1,0 +1,264 @@
+/* Import Comfortaa font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
+/* General Reset */
+body {
+    font-family: 'Comfortaa', cursive;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    position: relative;
+    z-index: 0;
+    color: #2C3E50;
+    overflow-x: hidden;
+}
+
+/* Blurred background image */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: url('images/bg.jpg') no-repeat center center / cover;
+    filter: blur(3px) brightness(0.9);
+    z-index: -2;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 10%;
+    background: linear-gradient(90deg, #82cfd5 0%, #E5E1F8 100%);
+    border-radius: 0 0 60px 60px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    font-family: 'Comfortaa', cursive;
+}
+
+.hero-text {
+    max-width: 500px;
+    font-family: 'Comfortaa', cursive;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin: 0;
+    color: #2C3E50;
+    font-family: 'Comfortaa', cursive;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin: 20px 0;
+    color: #34495E;
+    font-family: 'Comfortaa', cursive;
+}
+
+.hero-image img {
+    max-width: 400px;
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* CTA Button */
+.cta-button {
+    padding: 14px 28px;
+    font-size: 1rem;
+    background: linear-gradient(90deg, #6C5CE7, #574BDC);
+    border: none;
+    border-radius: 32px;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 6px 14px rgba(108, 92, 231, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-family: 'Comfortaa', cursive;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(87, 75, 220, 0.4);
+}
+
+/* Features Section */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 30px;
+    padding: 60px 10%;
+    text-align: center;
+    font-family: 'Comfortaa', cursive;
+}
+
+.feature {
+    background: #FFF8E7;
+    border-radius: 20px;
+    padding: 30px 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* darker and bigger shadow */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* smooth transition for shadow too */
+    font-family: 'Comfortaa', cursive;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+.feature span {
+    font-size: 2.4rem;
+    display: block;
+    margin-bottom: 10px;
+    color: #6C5CE7;
+}
+
+.feature h3 {
+    color: #2C3E50;
+    margin: 10px 0;
+    font-family: 'Comfortaa', cursive;
+}
+
+/* Bottom CTA */
+.bottom-cta {
+    text-align: center;
+    padding: 60px 10%;
+    background: #FFF8E7;
+    border-top: 2px dashed #6C5CE7;
+    margin-top: 60px;
+    border-radius: 60px 60px 0 0;
+    box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.04);
+    font-family: 'Comfortaa', cursive;
+}
+
+.bottom-cta h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #2C3E50;
+    font-family: 'Comfortaa', cursive;
+}
+
+.bottom-cta p {
+    color: #555;
+    margin-bottom: 20px;
+    font-family: 'Comfortaa', cursive;
+}
+
+.cta-button {
+    padding: 14px 28px;
+    font-size: 1rem;
+    background: linear-gradient(90deg, #6C5CE7, #574BDC);
+    border: none;
+    border-radius: 32px;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 6px 14px rgba(108, 92, 231, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-family: 'Comfortaa', cursive;
+    text-decoration: none;   /* <-- Add this */
+}
+
+
+/* ===== Responsive Mobile Fixes ===== */
+
+@media (max-width: 991px) {
+    .hero {
+        padding: 40px 8%;
+    }
+
+    .hero-text {
+        max-width: 100%;
+        flex: 1 1 100%;
+        margin-bottom: 30px;
+    }
+
+    .hero-image img {
+        max-width: 100%;
+        flex: 1 1 100%;
+    }
+
+    .features {
+        padding: 40px 8%;
+        gap: 20px;
+    }
+
+    .feature {
+        padding: 24px 16px;
+    }
+
+    .bottom-cta {
+        padding: 40px 8%;
+        margin-top: 40px;
+    }
+
+    .cta-button {
+        width: 100%;
+        padding: 16px 0;
+        font-size: 1.1rem;
+        border-radius: 28px;
+        display: block;
+        margin: 0 auto;
+        text-align: center; /* just to be sure the button text is centered */
+    }
+}
+
+@media (max-width: 767px) {
+    .hero {
+        flex-direction: column;
+        padding: 30px 6%;
+        border-radius: 0 0 40px 40px;
+    }
+
+    .hero h1 {
+        font-size: 2.25rem;
+        text-align: center;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .hero-text,
+    .hero-image img {
+        max-width: 100%;
+        flex: 1 1 100%;
+        margin: 0 auto;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+        padding: 30px 6%;
+        gap: 16px;
+    }
+
+    .feature {
+        padding: 20px 14px;
+    }
+
+    .feature span {
+        font-size: 2rem;
+    }
+
+    .bottom-cta {
+        padding: 30px 6%;
+        border-radius: 40px 40px 0 0;
+        margin-top: 30px;
+    }
+
+    .bottom-cta h2 {
+        font-size: 1.5rem;
+    }
+
+    .bottom-cta p {
+        font-size: 0.95rem;
+    }
+
+    .cta-button {
+        width: 100%;
+        padding: 16px 0;
+        font-size: 1.1rem;
+        border-radius: 28px;
+    }
+}

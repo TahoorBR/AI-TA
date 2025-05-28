@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Load FileSaver.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+<div class="quiz-container">
+    <div class="quiz-form">
+        <h2>Assignment Generator</h2>
+        <form id="assignmentForm" onsubmit="return false;">
+            <label>Topic:</label>
+            <input type="text" id="topic" required>
+
+            <label>Assignment Type:</label>
+            <select id="assignment_type" onchange="toggleWordLimit()">
+                <option value="short questions">Short Questions</option>
+                <option value="long questions">Long Questions</option>
+                <option value="essay">Essay</option>
+                <option value="research">Research</option>
+            </select>
+
+            <div id="wordLimitContainer" style="display: none;">
+                <label>Word Limit (per question):</label>
+                <input type="number" id="word_limit" placeholder="e.g. 300">
+            </div>
+
+            <label>Number of Questions:</label>
+            <input type="number" id="num_questions" required>
+
+            <label>Education Level:</label>
+            <select id="education_level" required>
+                <option value="" disabled selected>Select Education Level</option>
+                <option value="primary">Primary</option>
+                <option value="middle">Middle</option>
+                <option value="high_school">High School</option>
+                <option value="undergraduate">Undergraduate</option>
+                <option value="postgraduate">Postgraduate</option>
+            </select>
+
+            <button type="button" id="generateButton" onclick="generateAssignment()">Generate Assignment</button>
+            <div id="loadingIndicator" style="display: none;">
+                <p>Generating assignment, please wait...</p>
+                <div class="loading-bar"><div class="loading-fill"></div></div>
+            </div>
+        </form>
+    </div>
+
+    <div class="quiz-output">
+        <h2>Generated Assignment Content</h2>
+        <pre id="assignmentOutput"></pre>
+
+        <button id="editButton" style="display: none;" onclick="enableEdit()">Edit</button>
+
+        <a id="downloadLink" href="#" style="display: none;" download>
+            <button type="button" id="downloadButton">Download Assignment (DOCX)</button>
+        </a>
+    </div>
+</div>
+
+<script>
+function toggleWordLimit() {
+    const type = document.getElementById("assignment_type").value;
+    const longTypes = ["long questions", "essay", "research"];
+    document.getElementById("wordLimitContainer").style.display = longTypes.includes(type) ? "block" : "none";
+}
+</script>
+
+{% endblock %}

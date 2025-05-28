@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-text">
+    <h1>Meet AI-TA</h1>
+    <p>Your smartest AI-powered teaching assistant.</p>
+    <a href="{{ url_for('co_page') }}" class="cta-button">Start Free</a>
+  </div>
+  <div class="hero-image">
+    <img src="{{ url_for('static', filename='images/home.png') }}" alt="AI Bot">
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="features">
+  <div class="feature">
+    <span>🧾</span>
+    <h3>Auto-generate Quizzes</h3>
+    <p>Create quizzes instantly from any syllabus.</p>
+  </div>
+  <div class="feature">
+    <span>📚</span>
+    <h3>Course Outlines</h3>
+    <p>Structure your curriculum in seconds.</p>
+  </div>
+  <div class="feature">
+    <span>✍️</span>
+    <h3>Smart Grading</h3>
+    <p>Grade with AI feedback and clarity.</p>
+  </div>
+  <div class="feature">
+    <span>📤</span>
+    <h3>Assignments</h3>
+    <p>Craft engaging assignments effortlessly.</p>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="bottom-cta">
+  <h2>Start Using AI-TA Free</h2>
+  <p>No credit card required — empower your teaching today.</p>
+  <a href="{{ url_for('grading_feedback_page') }}" class="cta-button">Get Started</a>
+</section>
+{% endblock %}

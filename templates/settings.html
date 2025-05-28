@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="settings-container" style="text-align: center; margin-top: 20px;">
+    <h2>Settings</h2>
+    <div>
+        <a href="{{ url_for('logout') }}">
+            <button type="button">Logout</button>
+        </a>
+    </div>
+</div>
+{% endblock %}
