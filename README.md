@@ -1,8 +1,3 @@
-Here's a **README.md** file for your project **AI-TA: Artificial Intelligence Teaching Assistant**, written in a clear and professional style suitable for GitHub or similar platforms:
-
----
-
-````markdown
 # AI-TA: Artificial Intelligence Teaching Assistant
 
 AI-TA is an AI-powered teaching assistant chatbot that helps educators automate routine academic tasks such as course outline creation, quiz and assignment generation, grading, and personalized feedback. The system is designed to save teachers time, reduce workload, and improve the learning experience for students.
@@ -45,7 +40,7 @@ AI-TA uses a locally deployed LLaMA 3.2 3B model via Ollama to generate high-qua
    ```bash
    git clone https://github.com/your-username/ai-ta.git
    cd ai-ta
-````
+
 
 2. **Install Python dependencies**
 
